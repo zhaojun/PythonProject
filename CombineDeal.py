@@ -1,7 +1,9 @@
 import pandas as pd
 
 # 读取 Excel 文件
-excel_file = pd.ExcelFile('/mnt/七月第一周订单数据.xlsx')
+file = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月\2025年7月17日午餐.xlsx新.xlsx'
+file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月\2025年7月17日.xlsx'
+excel_file = pd.ExcelFile(file)
 
 # 获取所有表名
 sheet_names = excel_file.sheet_names
@@ -21,7 +23,7 @@ for sheet_name in sheet_names:
     df['订餐内容'] = df.apply(lambda row: row['账单类型'] + '：' + row['订餐内容'], axis=1)
 
     # 按姓名列进行分组，合并订餐内容和金额列
-    grouped = df.groupby('姓名').agg({
+    grouped = df.groupby('唯一ID').agg({
         '订餐内容': lambda x: ', '.join(str(i) for i in x),
         '金额': 'sum'
     }).reset_index()
@@ -30,7 +32,7 @@ for sheet_name in sheet_names:
     combined_data[sheet_name] = grouped
 
 # 创建一个新的 Excel 文件
-with pd.ExcelWriter('/mnt/七月第一周订单数据_合并_带前缀.xlsx') as writer:
+with pd.ExcelWriter(file2) as writer:
     # 遍历字典，将每个工作表的数据写入新文件
     for sheet_name, data in combined_data.items():
         data.to_excel(writer, sheet_name=sheet_name, index=False)

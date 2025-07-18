@@ -1,12 +1,13 @@
 import pandas as pd
 from datetime import datetime
 #午餐
-#BaseDirectory = r'C:\Users\Administrator\WPSDrive\1214901082\WPS云盘\工作\沈飞\订单数据\7月'
-#FileStore = [BaseDirectory+'\\2025年6月30日午餐.xlsx',BaseDirectory+'\\2025年7月1日午餐.xlsx',BaseDirectory+'\\2025年7月2日午餐.xlsx',BaseDirectory+'\\2025年7月3日午餐.xlsx',BaseDirectory+'\\2025年7月4日午餐.xlsx']# 读取第一个 Excel 文件
+# BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月'
+# FileStore = [BaseDirectory+'\\2025年7月17日午餐.xlsx']#,BaseDirectory+'\\2025年7月9日午餐.xlsx']# 读取第一个 Excel 文件
 #早餐
-BaseDirectory = r'C:\Users\Administrator\WPSDrive\1214901082\WPS云盘\工作\沈飞\订单数据\7月第一周早餐'
-FileStore = [BaseDirectory+'\\0630早餐.xlsx',BaseDirectory+'\\0701早餐.xlsx',BaseDirectory+'\\0702早餐.xlsx',BaseDirectory+'\\0704早餐.xlsx']# 读取第一个 Excel 文件
-file2 = r'C:\Users\Administrator\Desktop\菜品贴纸打印.xlsx'
+BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月第三周早餐'
+FileStore = [BaseDirectory+'\\20250718早餐.xlsx']# 读取第一个 Excel 文件#
+
+file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\菜品贴纸打印.xlsx'
 for file1 in FileStore:
     # 读取第一个 Excel 文件
     excel_file1 = pd.ExcelFile(file1)
@@ -19,7 +20,7 @@ for file1 in FileStore:
 
     # 遍历不同工作表，合并第二个文档中的菜品价格信息
     dfs = []
-    sheet_names = ['全部菜品', '早餐']
+    sheet_names = ['Sheet1']
     for sheet_name in sheet_names:
         df = excel_file2.parse(sheet_name)
         # 统一列名
