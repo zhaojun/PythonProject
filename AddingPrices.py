@@ -1,11 +1,11 @@
 import pandas as pd
 from datetime import datetime
 #午餐
-BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月'
-FileStore = [BaseDirectory+'\\2025年7月18日午餐.xlsx']#,BaseDirectory+'\\2025年7月9日午餐.xlsx']# 读取第一个 Excel 文件
+# BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月'
+# FileStore = [BaseDirectory+'\\2025年7月18日午餐.xlsx']#,BaseDirectory+'\\2025年7月9日午餐.xlsx']# 读取第一个 Excel 文件
 #早餐
-# BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月第三周早餐'
-# FileStore = [BaseDirectory+'\\20250718早餐.xlsx']# 读取第一个 Excel 文件#
+BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月第四周早餐'
+FileStore = [BaseDirectory+'\\0721早餐.xlsx']# 读取第一个 Excel 文件#
 
 file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\菜品贴纸打印.xlsx'
 for file1 in FileStore:
