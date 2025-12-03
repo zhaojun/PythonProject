@@ -1,8 +1,10 @@
 import pandas as pd
 
 # 读取 Excel 文件
-file = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月\2025年7月17日午餐.xlsx新.xlsx'
-file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\7月\2025年7月17日.xlsx'
+file = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\11月午餐\2025年12月2日午餐.xlsx新.xlsx'
+# file = r'D:\餐车午餐账单备份\11月第一周\2025年11月26日午餐.xlsx新.xlsx'
+# file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\10月午餐\2025年10月29日.xlsx'
+file2 = r'D:\餐车午餐账单备份\11月第一周\2025年12月2日.xlsx'
 excel_file = pd.ExcelFile(file)
 
 # 获取所有表名
@@ -16,11 +18,11 @@ for sheet_name in sheet_names:
     df = excel_file.parse(sheet_name)
 
     # 将账单类型和订餐内容列转换为字符串类型
-    df['账单类型'] = df['账单类型'].astype(str)
+    df['账目类型'] = df['账目类型'].astype(str)
     df['订餐内容'] = df['订餐内容'].astype(str)
 
     # 根据账单类型添加前缀到订餐内容
-    df['订餐内容'] = df.apply(lambda row: row['账单类型'] + '：' + row['订餐内容'], axis=1)
+    df['订餐内容'] = df.apply(lambda row: row['账目类型'] + '：' + row['订餐内容'], axis=1)
 
     # 按姓名列进行分组，合并订餐内容和金额列
     grouped = df.groupby('唯一ID').agg({
