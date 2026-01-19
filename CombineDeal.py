@@ -1,10 +1,10 @@
 import pandas as pd
 
 # 读取 Excel 文件
-file = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\11月午餐\2025年12月2日午餐.xlsx新.xlsx'
+file = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\11月午餐\1月16日订餐数据.xlsx新.xlsx'
 # file = r'D:\餐车午餐账单备份\11月第一周\2025年11月26日午餐.xlsx新.xlsx'
 # file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\10月午餐\2025年10月29日.xlsx'
-file2 = r'D:\餐车午餐账单备份\11月第一周\2025年12月2日.xlsx'
+file2 = r'D:\餐车账单备份\2026年1月16日.xlsx'
 excel_file = pd.ExcelFile(file)
 
 # 获取所有表名

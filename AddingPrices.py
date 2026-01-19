@@ -3,12 +3,15 @@ from datetime import datetime
 #午餐
 BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\11月午餐'
 # BaseDirectory = r'D:\餐车午餐账单备份\11月第一周'
-FileStore = [BaseDirectory+'\\2025年12月2日午餐.xlsx']#BaseDirectory+'\\2025年11月4日午餐.xlsx',BaseDirectory+'\\2025年11月5日午餐.xlsx']#,BaseDirectory+'\\2025年10月31日午餐.xlsx']
+FileStore = [BaseDirectory+'\\1月15日订餐数据.xlsx']#BaseDirectory+'\\2025年11月4日午餐.xlsx',BaseDirectory+'\\2025年11月5日午餐.xlsx']#,BaseDirectory+'\\2025年10月31日午餐.xlsx']
 # 早餐
 # BaseDirectory = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\11月早餐'
 # FileStore = [BaseDirectory+'\\2025-09-01早餐.xlsx',BaseDirectory+'\\2025-09-02早餐.xlsx',BaseDirectory+'\\2025-09-03早餐.xlsx',BaseDirectory+'\\2025-09-04早餐.xlsx',BaseDirectory+'\\2025-09-05早餐.xlsx']# 读取第一个 Excel 文件
-# FileStore = [BaseDirectory+'\\12月2日早餐.xlsx']#,BaseDirectory+'\\2025-09-24早餐.xlsx',BaseDirectory+'\\2025-09-25早餐.xlsx']
+# FileStore = [BaseDirectory+'\\1月16日早餐.xlsx']#,BaseDirectory+'\\2025-09-24早餐.xlsx',BaseDirectory+'\\2025-09-25早餐.xlsx']
+
 file2 = r'D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\菜品贴纸打印.xlsx'
+
+
 for file1 in FileStore:
     # 读取第一个 Excel 文件
     excel_file1 = pd.ExcelFile(file1)

@@ -14,7 +14,7 @@ def merge_excel_with_dividers(folder_path, output_file):
     # 获取文件夹中所有.xlsx和.xls文件
     excel_files = []
     for file in os.listdir(folder_path):
-        if file.endswith(('.xlsx', '.xls')) and not file.startswith('~$'):  # 排除临时文件
+        if file.endswith('.xlsx') and not file.startswith('~$'):  # 排除临时文件
             excel_files.append(os.path.join(folder_path, file))
 
     # 初始化一个空DataFrame用于存储所有数据
@@ -50,8 +50,8 @@ def merge_excel_with_dividers(folder_path, output_file):
 # 使用示例
 if __name__ == "__main__":
     # 替换为你的Excel文件所在文件夹路径
-    input_folder = r"D:\沈飞账单-9月"
+    input_folder = r"D:\WPS云盘\1214901082\WPS云盘\工作\沈飞\订单数据\11月午餐\新建文件夹"
     # 替换为输出文件路径
-    output_file = "merged_result_with_dividers.xlsx"
+    output_file = "1月账单查询文档.xlsx"
 
     merge_excel_with_dividers(input_folder, output_file)
